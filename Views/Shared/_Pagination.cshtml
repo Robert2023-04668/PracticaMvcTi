@@ -1,0 +1,46 @@
+﻿@model dynamic
+
+@{
+   
+    int registrosTotales = Model.Total;
+    int tamañoPagina = Model.PageSize;
+    int totalPaginas = registrosTotales > 0 ? (int)Math.Ceiling((double)registrosTotales / tamañoPagina) : 1;
+    int paginaActual = Model.Page;
+    string action = ViewContext.RouteData.Values["action"]?.ToString() ?? "Index";
+}
+
+<nav aria-label="Navegacion" class="mt-4">
+    <ul class="pagination justify-content-center mb-1">
+
+      
+        <li class="page-item @(paginaActual <= 1 ? "disabled" : "")">
+            <a class="page-link shadow-sm" asp-action="@action"
+               asp-route-page="@(paginaActual - 1)"
+               asp-route-search="@ViewBag.CurrentSearch">
+                <span aria-hidden="true">&laquo;</span> Anterior
+            </a>
+        </li>
+
+        @for (int i = 1; i <= totalPaginas; i++)
+        {
+            <li class="page-item @(i == paginaActual ? "active shadow-sm" : "")">
+                <a class="page-link" asp-action="@action"
+                   asp-route-page="@i"
+                   asp-route-search="@ViewBag.CurrentSearch">@i</a>
+            </li>
+        }
+
+        <li class="page-item @(paginaActual >= totalPaginas ? "disabled" : "")">
+            <a class="page-link shadow-sm" asp-action="@action"
+               asp-route-page="@(paginaActual + 1)"
+               asp-route-search="@ViewBag.CurrentSearch">
+                Siguiente <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+
+    </ul>
+</nav>
+
+<div class="text-center text-muted small">
+    Mostrando <strong>@Model.Data.Count</strong> de <strong>@registrosTotales</strong> registros totales
+</div>

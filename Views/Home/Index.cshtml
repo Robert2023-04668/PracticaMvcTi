@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4">Sistema de Gestion</h1>
+        <p class="lead">Bienvenido al sistema de Gestion de Robert</p>
+        <p class="focus-ring-light">Seleccione una opcion</p>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-3 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Empleados</h5>
+                    <p class="card-text">Gestionar empleados</p>
+                    <a asp-controller="Empleados" asp-action="Index" class="btn btn-primary">
+                        Ir
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Departamentos</h5>
+                    <p class="card-text">Administrar departamentos</p>
+                    <a asp-controller="Departamentos" asp-action="Index" class="btn btn-success">
+                        Ir
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Puestos</h5>
+                    <p class="card-text">Gestionar puestos</p>
+                    <a asp-controller="Puestos" asp-action="Index" class="btn btn-warning">
+                        Ir
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-3 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Estados</h5>
+                    <p class="card-text">Gestionar Estados</p>
+                    <a asp-controller="Estados" asp-action="Index" class="btn btn-dark">
+                        Ir
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

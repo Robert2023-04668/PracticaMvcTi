@@ -1,0 +1,27 @@
+﻿@model PracticaMvcTi.ViewModels.DepartamentoViewModel.DepartamentoFormViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+
+<form >
+
+   
+    <div class="mb-3">
+        <label asp-for="NombreDepartamento" class="form-label"> Nombre</label>
+        <input asp-for="NombreDepartamento" class="form-control" readonly />
+
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="Descripcion" class="form-label"></label>
+        <input asp-for="Descripcion" class="form-control" readonly />
+    </div>
+
+    <a asp-action="Index">Volver a la lista</a>
+</form>
+

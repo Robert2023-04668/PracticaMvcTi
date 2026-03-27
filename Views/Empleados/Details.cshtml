@@ -1,0 +1,109 @@
+﻿@model PracticaMvcTi.ViewModels.EmpleadoViewModel.EmpleadosFormViewModel
+
+@{
+    ViewData["Title"] = "Detalles del Empleado";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Información del Empleado</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Details">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="IdEmpleado" />
+
+                <div class="row">
+                    <div class="col-md-3 text-center mb-4">
+                        <div class="p-3 border rounded bg-light">
+                            @if (!string.IsNullOrEmpty(Model.Fotografia))
+                            {
+                                <img src="@Model.Fotografia" class="img-fluid rounded-circle border shadow-sm" style="width: 150px; height: 150px; object-fit: cover;" alt="Foto" />
+                            }
+                            else
+                            {
+                                <img src="/images/no-image.png" class="img-fluid rounded-circle border shadow-sm" style="width: 150px; height: 150px; object-fit: cover;" alt="Sin foto" />
+                            }
+                            <div class="mt-2 small text-muted">Foto de Perfil</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="form-group col-md-6 mb-3">
+                                <label asp-for="Nombre" class="fw-bold mb-1"></label>
+                                <input asp-for="Nombre" class="form-control" / readonly>
+                            </div>
+                            <div class="form-group col-md-6 mb-3">
+                                <label asp-for="Apellido" class="fw-bold mb-1"></label>
+                                <input asp-for="Apellido" class="form-control" /readonly>
+                            </div>
+                            <div class="form-group col-md-4 mb-3">
+                                <label asp-for="Edad" class="fw-bold mb-1"></label>
+                                <input asp-for="Edad" class="form-control" /readonly>
+                            </div>
+                            <div class="form-group col-md-8 mb-3">
+                                <label asp-for="Correo" class="fw-bold mb-1"></label>
+                                <input asp-for="Correo" class="form-control" /readonly>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="row">
+                            <div class="form-group col-md-4 mb-3">
+                                <label asp-for="IdDepartamento" class="fw-bold mb-1"></label>
+                                <select asp-for="IdDepartamento" class="form-select" asp-items="ViewBag.IdDepartamento"></select>
+                            </div>
+                            <div class="form-group col-md-4 mb-3">
+                                <label asp-for="IdPuesto" class="fw-bold mb-1"></label>
+                                <select asp-for="IdPuesto" class="form-select" asp-items="ViewBag.IdPuesto"></select>
+                            </div>
+                            <div class="form-group col-md-4 mb-3">
+                                <label asp-for="IdEstado" class="fw-bold mb-1"></label>
+                                <select asp-for="IdEstado" class="form-select" asp-items="ViewBag.IdEstado"></select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6 mb-3">
+                                <label asp-for="Salario" class="fw-bold mb-1"></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input asp-for="Salario" class="form-control" /readonly>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6 mb-3">
+                                <label asp-for="Telefono" class="fw-bold mb-1"></label>
+                                <input asp-for="Telefono" class="form-control" /readonly>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6 mb-3">
+                                <label asp-for="FechaDeNacimiento" class="fw-bold mb-1"></label>
+                                <input asp-for="FechaDeNacimiento" type="date" class="form-control" /readonly>
+                            </div>
+                            <div class="form-group col-md-6 mb-3">
+                                <label asp-for="FechaDeContratacion" class="fw-bold mb-1"></label>
+                                <input asp-for="FechaDeContratacion" type="date" class="form-control" /readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="Direccion" class="fw-bold mb-1"></label>
+                            <textarea asp-for="Direccion" class="form-control" rows="2"></textarea >
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-2">
+                            <a asp-action="Index" class="btn btn-outline-secondary">Volver</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

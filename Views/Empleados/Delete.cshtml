@@ -1,0 +1,79 @@
+﻿@model PracticaMvcTi.ViewModels.EmpleadoViewModel.EmpleadosFormViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Delete">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdEmpleado" />
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" /readonly>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido" class="control-label"></label>
+                <input asp-for="Apellido" class="form-control" /readonly>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edad" class="control-label"></label>
+                <input asp-for="Edad" class="form-control" /readonly>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="IdDepartamento" class="control-label"></label>
+                <select asp-for="IdDepartamento" class="form-control" asp-items="ViewBag.IdDepartamento"></select>
+                <span asp-validation-for="IdDepartamento" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="IdPuesto" class="control-label"></label>
+                <select asp-for="IdPuesto" class="form-control" asp-items="ViewBag.IdPuesto"> </select>
+                <span asp-validation-for="IdPuesto" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Salario" class="control-label"></label>
+                <input asp-for="Salario" class="form-control" /readonly>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaDeNacimiento" class="control-label"></label>
+                <input asp-for="FechaDeNacimiento" class="form-control" /readonly>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaDeContratacion" class="control-label"></label>
+                <input asp-for="FechaDeContratacion" class="form-control" /readonly>
+            </div>
+            <div class="form-group">
+                <label asp-for="Direccion" class="control-label"></label>
+                <input asp-for="Direccion" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label"></label>
+                <input asp-for="Telefono" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Correo" class="control-label"></label>
+                <input asp-for="Correo" class="form-control" /readonly>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEstado" class="control-label"></label>
+                <select asp-for="IdEstado" class="form-control" asp-items="ViewBag.IdEstado"></select>
+                <span asp-validation-for="IdEstado" class="text-danger"></span>
+            </div>
+            <p style="margin-top:5px; margin:5px">Seguro de quere borrar este Empleado?</p>
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+

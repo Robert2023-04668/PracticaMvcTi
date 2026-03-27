@@ -1,0 +1,49 @@
+﻿@model PracticaMvcTi.ViewModels.DepartamentoViewModel.DepartamentoFormViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Nuevo Departamento</h1>
+
+
+
+
+<form asp-action="Create" method="post">
+
+            @if (Model.Exception != null)
+            {
+                <div class=" alert alert-danger">
+                    <h4 class="alert-heading"> Error</h4>
+                    <p>@Model.Exception.Message</p>
+
+                </div>
+            }
+
+            <div class="form-group">
+                <label asp-for="NombreDepartamento" class="control-label"> Nombre</label>
+                <input asp-for="NombreDepartamento" class="form-control" />
+                <span asp-validation-for="NombreDepartamento" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+                  <a asp-action="Index">Volver a la lista</a>
+        </form>
+
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

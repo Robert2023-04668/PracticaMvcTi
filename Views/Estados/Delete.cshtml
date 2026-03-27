@@ -1,0 +1,27 @@
+﻿@model PracticaMvcTi.ViewModels.EstadosViewModel.EstadosFormViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+
+<form method="post">
+
+    <p>Seguro de quere borrar este Estado?</p>
+
+    <div class="mb-3">
+        <label asp-for="NombreEstado" class="form-label"> Nombre</label>
+        <input asp-for="NombreEstado" class="form-control" readonly />
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Descripcion" class="form-label"> Nombre</label>
+        <input asp-for="Descripcion" class="form-control" readonly />
+
+    </div>
+
+    <a asp-action="Index">Volver a la lista</a>
+</form>
