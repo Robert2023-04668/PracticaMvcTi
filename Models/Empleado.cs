@@ -5,8 +5,14 @@ using System.Collections.Generic;
 
 namespace PracticaMvcTi.Models;
 
+
+
+/// <summary>
+/// Representa la entidad Empleado con sus datos personales y laborales.
+/// </summary>
 public partial class Empleado
 {
+    // Comentario agregado por Ruddy
     public int IdEmpleado { get; set; }
 
     public string Fotografia { get; set; }
@@ -16,6 +22,8 @@ public partial class Empleado
     public string Apellido { get; set; }
 
     public int? Edad { get; set; }
+
+    public bool Activo { get; set; }
 
     public int? IdDepartamento { get; set; }
 
@@ -40,4 +48,10 @@ public partial class Empleado
     public virtual Estado IdEstadoNavigation { get; set; }
 
     public virtual Puesto IdPuestoNavigation { get; set; }
+
+    public string EstadoCivil { get; set; }
+
+    public DateOnly? FechaDeSalida { get; set; }
+
+    public DateTime FechaRegistro { get; set; }
 }
