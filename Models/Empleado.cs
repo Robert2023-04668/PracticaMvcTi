@@ -7,6 +7,7 @@ namespace PracticaMvcTi.Models;
 
 public partial class Empleado
 {
+    // Comentario agregado por Ruddy
     public int IdEmpleado { get; set; }
 
     public string Fotografia { get; set; }
