@@ -52,4 +52,6 @@ public partial class Empleado
     public string EstadoCivil { get; set; }
 
     public DateOnly? FechaDeSalida { get; set; }
+
+    public DateTime FechaRegistro { get; set; }
 }
