@@ -45,4 +45,6 @@ public partial class Empleado
     public virtual Estado IdEstadoNavigation { get; set; }
 
     public virtual Puesto IdPuestoNavigation { get; set; }
+
+    public DateTime FechaRegistro { get; set; }
 }
