@@ -18,6 +18,8 @@ public partial class Empleado
 
     public int? Edad { get; set; }
 
+    public bool Activo { get; set; }
+
     public int? IdDepartamento { get; set; }
 
     public int? IdPuesto { get; set; }
@@ -41,4 +43,8 @@ public partial class Empleado
     public virtual Estado IdEstadoNavigation { get; set; }
 
     public virtual Puesto IdPuestoNavigation { get; set; }
+
+    public string EstadoCivil { get; set; }
+
+    public DateOnly? FechaDeSalida { get; set; }
 }
