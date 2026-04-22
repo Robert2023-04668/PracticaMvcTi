@@ -5,6 +5,11 @@ using System.Collections.Generic;
 
 namespace PracticaMvcTi.Models;
 
+
+
+/// <summary>
+/// Representa la entidad Empleado con sus datos personales y laborales.
+/// </summary>
 public partial class Empleado
 {
     // Comentario agregado por Ruddy
